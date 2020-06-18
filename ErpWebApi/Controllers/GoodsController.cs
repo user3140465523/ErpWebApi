@@ -10,7 +10,7 @@ using System.Data;
 
 namespace ErpWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
     public class GoodsController : ControllerBase
     {
@@ -20,6 +20,8 @@ namespace ErpWebApi.Controllers
             _dal = dal;
 
         }
+       
+
 
         public int Add(Goods g, string name, int id, int num)
         {
