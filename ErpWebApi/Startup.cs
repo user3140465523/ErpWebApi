@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dal;
+using Dal.Logindal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,7 @@ namespace ErpWebApi
         {
             services.AddControllers();
             services.AddSingleton<IGoodsdal,Goodsdal>();
+            services.AddSingleton<IUserInfoDAL,UserInfoDAL>();
             services.AddCors(options =>
          options.AddPolicy("cor",
          p => p.AllowAnyOrigin())

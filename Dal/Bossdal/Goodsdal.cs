@@ -42,9 +42,9 @@ namespace Dal
             return DBHelper.GetList<Goods>(shows);
         }
 
-        public int Upt(int id, string name, DateTime scdate, int bz, string zx, int phone, int sum)
+        public int Upt(int id, string Gname, DateTime Gscdate, int Gbz, string Gzxbz, int Gphone, int Gsum)
         {
-            string upts = $"update Goods set Gname={name},Gscdate={scdate},Gbz={bz},Gzxbz={zx},Gphone={phone},Gsum={sum} where Gid={id}";
+            string upts = $"update Goods set Gname={Gname},Gscdate={Gscdate},Gbz={Gbz},Gzxbz={Gzxbz},Gphone={Gphone},Gsum={Gsum} where Gid={id}";
             return DBHelper.ExecuteNonQuery(upts);
         }
     }

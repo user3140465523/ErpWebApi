@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Dal.Bossdal
@@ -17,7 +18,7 @@ namespace Dal.Bossdal
         int Del(int id);
 
 
-        int Upt(string Uname, DateTime scdate, int bz, string zx, int phone, int sum);
+        int Upt(int id,string Uname,string Upass, string Uphone, string Uemail, int Uage, bool Usex,decimal salary);
 
 
         DataTable Retrieve(string name);
