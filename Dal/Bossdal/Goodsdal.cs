@@ -19,7 +19,7 @@ namespace Dal
             {
                 string Adds = $"insert into from Goods Values('{g.Gname}','{g.Gscdata}','{g.Gbz}','{g.Gzxbz}','{g.Gphone}','{g.num}')";
                 return DBHelper.ExecuteNonQuery(Adds);
-
+               
             }
         }
 

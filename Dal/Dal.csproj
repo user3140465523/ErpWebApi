@@ -13,4 +13,9 @@
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Managerdal\" />
+    <Folder Include="selldal\" />
+  </ItemGroup>
+
 </Project>
