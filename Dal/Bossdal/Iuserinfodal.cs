@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
-
 namespace Dal.Bossdal
 {
     public interface IUserinfodal
@@ -18,7 +17,7 @@ namespace Dal.Bossdal
         int Del(int id);
 
 
-        int Upt(int id,string Uname,string Upass, string Uphone, string Uemail, int Uage, bool Usex,decimal salary);
+        int Upt(int id,string Uname,string Upass, string Uphone, string Uemail, int Uage, bool Usex,decimal Salary);
 
 
         DataTable Retrieve(string name);

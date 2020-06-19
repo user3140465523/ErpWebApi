@@ -16,9 +16,9 @@ namespace Dal.Logindal
 
         public int LoginAdd(Userinfo info)
         {
-            string Adds = $"insert into Userinfo values('{info.Uname}','{info.Upass}','{info.Uphone}','{info.Uemail}','{info.Uage}','{info.Usex}','{info.salary}','{info.Rid}') ";
+            string Adds = $"insert into Userinfo values('{info.Uname}','{info.Upass}','{info.Uphone}','{info.Uemail}','{info.Uage}','{info.Usex}','{info.Salary}','{info.Rid}') ";
             return DBHelper.ExecuteNonQuery(Adds);
-            11
+            
         }
     }
 }

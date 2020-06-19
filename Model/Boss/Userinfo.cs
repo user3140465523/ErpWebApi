@@ -13,7 +13,7 @@ namespace Model
         public string Uemail { get; set; }
         public int Uage { get; set; }
         public int Usex { get; set; }
-        public decimal salary { get; set; }
+        public decimal Salary { get; set; }
         public int Rid { get; set; }
     }
 }

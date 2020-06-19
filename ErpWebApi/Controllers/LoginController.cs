@@ -11,10 +11,10 @@ namespace ErpWebApi.Controllers
 {
     [Route("api/[controller]/[Action]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class LoginController : ControllerBase
     {
         private IUserInfoDAL _dal;
-        public UserController(IUserInfoDAL dal) {
+        public LoginController(IUserInfoDAL dal) {
             _dal= dal ;
         }
         public Userinfo Login(Userinfo info)

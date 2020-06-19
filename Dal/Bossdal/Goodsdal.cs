@@ -17,7 +17,7 @@ namespace Dal
             }
             else
             {
-                string Adds = $"insert into from Goods Values('{g.Gname}','{g.Gscdata}','{g.Gbz}','{g.Gzxbz}','{g.Gphone}','{g.num}')";
+                string Adds = $"insert into  Goods Values('{g.Gname}','{g.Gscdata}','{g.Gbz}','{g.Gzxbz}','{g.Gphone}','{g.Gnum}')";
                 return DBHelper.ExecuteNonQuery(Adds);
                
             }

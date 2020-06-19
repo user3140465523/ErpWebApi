@@ -17,7 +17,7 @@ namespace Dal
         int Del(int id, int num);
 
 
-        int Upt(int id, string name, DateTime scdate, int bz, string zx, int phone, int sum);
+        int Upt(int id, string Gname, DateTime Gscdate, int Gbz, string Gzxbz, int Gphone, int Gsum);
 
 
         DataTable Retrieve(string name);
