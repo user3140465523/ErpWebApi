@@ -32,7 +32,7 @@ namespace ErpWebApi.Controllers
         {
             return _dal.Del(id, num);
         }
-
+        
         public DataTable Retrieve(string name)
         {
             return _dal.Retrieve(name);
