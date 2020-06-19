@@ -20,7 +20,7 @@ namespace ErpWebApi.Controllers
             _dal = dal;
 
         }
-       123
+       123456
 
 
         public int Add(Goods g, string name, int id, int num)
