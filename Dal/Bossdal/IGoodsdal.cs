@@ -8,7 +8,7 @@ namespace Dal
 {
     public interface IGoodsdal
     {
-        int Add(Goods g, string name, int id, int num);
+        int Add(Goods g, string name, int num);
 
 
         List<Goods> Show();

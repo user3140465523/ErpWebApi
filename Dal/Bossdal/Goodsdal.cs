@@ -7,12 +7,12 @@ namespace Dal
 {
     public class Goodsdal : IGoodsdal
     {
-        public int Add(Goods g, string name, int id, int num)
+        public int Add(Goods g, string name,  int num)
         {
-            object names = DBHelper.GetDataTable($" select * from Goods like {name}=Gname where {id}=Gid");
+            object names = DBHelper.GetDataTable($" select * from Goods like {name}=Gname");
             if (Convert.ToString(names) != "")
             {
-                string updates = $"update Goods set num={num}+num where {id}=Gid";
+                string updates = $"update Goods set num={num}+num ";
                 return DBHelper.ExecuteNonQuery(updates);
             }
             else
