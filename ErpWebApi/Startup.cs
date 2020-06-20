@@ -30,10 +30,7 @@ namespace ErpWebApi
             services.AddControllers();
             services.AddSingleton<IGoodsdal,Goodsdal>();
             services.AddSingleton<IUserInfoDAL,UserInfoDAL>();
-            services.AddCors(options =>
-         options.AddPolicy("cor",
-         p => p.AllowAnyOrigin())
-         );
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +51,7 @@ namespace ErpWebApi
             {
                 endpoints.MapControllers();
             });
-            app.UseCors("cor");
+            
         }
     }
 }
