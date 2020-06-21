@@ -12,7 +12,7 @@ namespace Dal.Logindal
         {
             string sql = $"select *from Userinfo where Uname ='{info.Uname}'and Upass='{info.Upass}'";
             return DBHelper.GetList<Userinfo>(sql).FirstOrDefault();
-            123
+            
         }
 
         public int LoginAdd(Userinfo info)
