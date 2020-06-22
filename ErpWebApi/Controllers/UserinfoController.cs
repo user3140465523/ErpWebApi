@@ -8,7 +8,7 @@ using Model.Boss;
 using Dal.Bossdal;
 using Model;
 using System.Data;
-
+using ErpWebApi.Model;
 namespace ErpWebApi.Controllers
 {
     [Route("api/[controller]/[Action]")]
@@ -34,10 +34,37 @@ namespace ErpWebApi.Controllers
         {
             return _dal.Retrieve(name);
         }
-
-        public List<Userinfo> Show()
+        [HttpGet]
+        public HttpResposeMessage1 Show()
         {
-            return _dal.Show();
+            List<Userinfo> list = _dal.Show();
+            if (list != null)
+            {
+                HttpResposeMessage1 message = new HttpResposeMessage1()
+                {
+                    Code = 0,
+                    Count = list.Count(),
+                    Msg = "查询成功",
+                    Data = list
+
+                };
+
+                return message;
+            }
+            else
+            {
+                HttpResposeMessage1 message = new HttpResposeMessage1()
+                {
+                    Code = 1,
+                    Count = list.Count(),
+                    Msg = "查询失败",
+                    Data = list
+
+                };
+
+                return message;
+            }
+
         }
 
         public int Upt(int id, string Uname, string Upass, string Uphone, string Uemail, int Uage, bool Usex, decimal Salary)

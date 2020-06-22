@@ -29,7 +29,7 @@ namespace Dal.Bossdal
 
         public List<Userinfo> Show()
         {
-            string shows = "select * from Userinfo ";
+            string shows = "select * from Userinfo";
             return DBHelper.GetList<Userinfo>(shows);
         }
 

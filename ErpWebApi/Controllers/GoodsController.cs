@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Dal;
 using Model;
 using System.Data;
+using ErpWebApi.Model;
 
 namespace ErpWebApi.Controllers
 {
@@ -23,9 +24,9 @@ namespace ErpWebApi.Controllers
        
 
 
-        public int Add(Goods g, string name, int id, int num)
+        public int Add(Goods g, string name, int num)
         {
-            return _dal.Add(g, name, id, num);
+            return _dal.Add(g, name, num);
         }
 
         public int Del(int id, int num)
@@ -37,10 +38,36 @@ namespace ErpWebApi.Controllers
         {
             return _dal.Retrieve(name);
         }
-
-        public List<Goods> Show()
+        [HttpGet]
+        public HttpResposeMessage Show()
         {
-            return _dal.Show();
+            List<Goods> list = _dal.Show();
+            if (list!= null)
+            {
+                HttpResposeMessage message = new HttpResposeMessage()
+                {
+                    Code = 0,
+                    Count = list.Count(),
+                    Msg = "查询成功",
+                    Data = list
+
+                };
+
+                return message;
+            }
+            else
+            {
+                HttpResposeMessage message = new HttpResposeMessage()
+                {
+                    Code = 1,
+                    Count = list.Count(),
+                    Msg = "查询失败",
+                    Data = list
+
+                };
+
+                return message;
+            }
         }
 
         public int Upt(int id, string name, DateTime scdate, int bz, string zx, int phone, int sum)

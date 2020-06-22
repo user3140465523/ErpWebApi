@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.Boss;
 using Dal.Bossdal;
+using ErpWebApi.Model;
 
 namespace ErpWebApi.Controllers
 {
@@ -24,9 +25,22 @@ namespace ErpWebApi.Controllers
             return _dal.Add(u);
         }
 
-        public List<Produce> Show(int num)
+        public HttpResposeMessage2 Show(int num)
         {
-            return _dal.Show(num);
+            List<Produce> list = _dal.Show(num);
+          
+          
+                HttpResposeMessage2 message = new HttpResposeMessage2()
+                {
+                    Code = 0,
+                    Count = list.Count(),
+                    Msg = "查询成功",
+                    Data = list
+
+                };
+
+                return message;
+            
         }
     }
 }
