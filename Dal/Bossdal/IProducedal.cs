@@ -11,7 +11,7 @@ namespace Dal.Bossdal
         int Add(Produce u);
 
 
-        List<Produce> Show(int num );
+        List<Produce> Show();
 
 
         

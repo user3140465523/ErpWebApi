@@ -22,12 +22,13 @@ namespace ErpWebApi.Controllers
         }
         public int Add(Produce u)
         {
+            
             return _dal.Add(u);
         }
 
-        public HttpResposeMessage2 Show(int num)
+        public HttpResposeMessage2 Show()
         {
-            List<Produce> list = _dal.Show(num);
+            List<Produce> list = _dal.Show();
           
           
                 HttpResposeMessage2 message = new HttpResposeMessage2()

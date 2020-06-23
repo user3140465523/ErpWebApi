@@ -8,11 +8,11 @@ namespace Dal.Bossdal
     {
         public int Add(Produce u)
         {
-            string Adds = $"insert into Produce Values('{u.Proname}','{u.Pronum}','{u.Proscdate}','{u.Proyj}',)";
+            string Adds = $"insert into Produce Values('{u.Proname}','{u.Pronum}','{u.Proscdate}',)";
             return DBHelper.ExecuteNonQuery(Adds);
         }
 
-        public List<Produce> Show(int num)
+        public List<Produce> Show()
         {
             string shows = "select * from Produce";
             return DBHelper.GetList<Produce>(shows);
