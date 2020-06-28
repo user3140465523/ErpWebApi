@@ -14,7 +14,7 @@ namespace Dal.Bossdal
         List<Userinfo> Show();
 
 
-        int Del(int id);
+        int Del(int Uid);
 
 
         int Upt(int id,string Uname,string Upass, string Uphone, string Uemail, int Uage, bool Usex,decimal Salary);

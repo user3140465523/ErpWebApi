@@ -25,9 +25,9 @@ namespace ErpWebApi.Controllers
             return _dal.Add(u);
         }
 
-        public int Del(int id)
+        public int Del([FromBody]int Uid)
         {
-            return _dal.Del(id);
+            return _dal.Del(Uid);
         }
 
         public DataTable Retrieve(string name)

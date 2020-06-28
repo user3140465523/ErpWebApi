@@ -39,7 +39,7 @@ namespace ErpWebApi
                 options.AddPolicy("getd", policy =>
                 {
                     // 設定允許跨域的來源，有多個的話可以用 `,` 隔開
-                    policy.WithOrigins("https://localhost:44306", "https://localhost:44306")
+                    policy.WithOrigins("https://localhost:44370", "http://localhost:20343")
                             .AllowAnyHeader()
                             .AllowAnyMethod()
                             .AllowCredentials();
@@ -51,7 +51,7 @@ namespace ErpWebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors("getd");
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -60,8 +60,9 @@ namespace ErpWebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors("getd");
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

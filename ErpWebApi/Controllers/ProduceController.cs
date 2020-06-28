@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Model.Boss;
 using Dal.Bossdal;
 using ErpWebApi.Model;
+using Microsoft.AspNetCore.Cors;
 
 namespace ErpWebApi.Controllers
 {
+
+    
     [Route("api/[controller]/[Action]")]
     [ApiController]
     public class ProduceController : ControllerBase
@@ -20,7 +23,8 @@ namespace ErpWebApi.Controllers
             _dal = dal;
 
         }
-        public int Add(Produce u)
+        [HttpPost]
+        public int Add([FromForm]Produce u)
         {
             
             return _dal.Add(u);

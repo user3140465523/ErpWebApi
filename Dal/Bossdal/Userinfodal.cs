@@ -14,9 +14,9 @@ namespace Dal.Bossdal
             return DBHelper.ExecuteNonQuery(Adds); 
         }
 
-        public int Del(int id)
+        public int Del(int Uid)
         {
-            string dels = $"select * from Userinfo where id={id}";
+            string dels = $"delete from Userinfo where Uid={Uid}";
 
             return DBHelper.ExecuteNonQuery(dels);
         }
