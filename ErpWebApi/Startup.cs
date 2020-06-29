@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dal;
 using Dal.Bossdal;
-using Dal.Logindal;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

@@ -66,10 +66,10 @@ namespace ErpWebApi.Controllers
             }
 
         }
-
-        public int Upt(int id, string Uname, string Upass, string Uphone, string Uemail, int Uage, bool Usex, decimal Salary)
+        [HttpPut]
+        public int Upt(Userinfo u)
         {
-            return _dal.Upt(id, Uname, Upass, Uphone, Uemail, Uage, Usex, Salary);
+            return _dal.Upt(u);
         }
     }
 }

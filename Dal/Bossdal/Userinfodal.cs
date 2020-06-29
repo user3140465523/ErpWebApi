@@ -10,7 +10,7 @@ namespace Dal.Bossdal
     {
         public int Add(Userinfo u)
         {
-          string Adds= $"insert into  Userinfo Values('{u.Uname}','{u.Upass}','{u.Uphone}','{u.Uemail}','{u.Uage}','{u.Usex}','{u.Salary}')";
+          string Adds= $"insert into  Userinfo Values('{u.Uid},{u.Uname}','{u.Upass}','{u.Uphone}','{u.Uemail}','{u.Uage}','{u.Usex}','{u.Salary}')";
             return DBHelper.ExecuteNonQuery(Adds); 
         }
 
@@ -33,9 +33,9 @@ namespace Dal.Bossdal
             return DBHelper.GetList<Userinfo>(shows);
         }
 
-        public int Upt( int id,string Uname, string Upass, string Uphone, string Uemail, int Uage, bool Usex, decimal Salary)
+        public int Upt(Userinfo u)
         {
-            string upts = $"update Userinfo set Uname={Uname},Upass={Upass},Uphone={Uphone},Uemail={Uemail},Uage={Uage},Usex={Usex} Salary={Salary}where Gid={id}";
+            string upts = $"update Userinfo set Uname='{u.Uname}',Upass='{u.Upass}',Uphone='{u.Uphone}',Uemail='{u.Uemail}',Uage={u.Uage},Usex={u.Usex},Salary='{u.Salary}' where Uid={u.Uid}";
             return DBHelper.ExecuteNonQuery(upts);
         }
 

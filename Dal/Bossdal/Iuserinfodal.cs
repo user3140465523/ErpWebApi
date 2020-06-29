@@ -17,7 +17,7 @@ namespace Dal.Bossdal
         int Del(int Uid);
 
 
-        int Upt(int id,string Uname,string Upass, string Uphone, string Uemail, int Uage, bool Usex,decimal Salary);
+        int Upt(Userinfo u);
 
 
         DataTable Retrieve(string name);

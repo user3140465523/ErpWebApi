@@ -24,7 +24,7 @@ namespace ErpWebApi.Controllers
 
         }
         [HttpPost]
-        public int Add([FromForm]Produce u)
+        public int Add(Produce u)
         {
             
             return _dal.Add(u);

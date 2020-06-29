@@ -8,7 +8,7 @@ namespace Dal.Bossdal
     {
         public int Add(Produce u)
         {
-            string Adds = $"insert into Produce Values('{u.Proname}','{u.Pronum}','{u.Proscdate}','{u.Proyj}')";
+            string Adds = $"insert into Produce Values({u.Proid},'{u.Proname}','{u.Proscdate}',{u.Pronum},'{u.Proyj}')";
             return DBHelper.ExecuteNonQuery(Adds);
         }
 
