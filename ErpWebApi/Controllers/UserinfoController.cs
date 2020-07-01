@@ -4,11 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ErpWebApi.Model;
 using Model.Boss;
 using Dal.Bossdal;
-using Model;
 using System.Data;
-using ErpWebApi.Model;
+
+
 namespace ErpWebApi.Controllers
 {
     [Route("api/[controller]/[Action]")]
@@ -25,7 +26,7 @@ namespace ErpWebApi.Controllers
             return _dal.Add(u);
         }
 
-        public int Del([FromBody]int Uid)
+        public int Del([FromBody] int Uid)
         {
             return _dal.Del(Uid);
         }
@@ -37,7 +38,7 @@ namespace ErpWebApi.Controllers
         [HttpGet]
         public HttpResposeMessage1 Show()
         {
-            List<Userinfo> list = _dal.Show();
+            List<Userinfo> list =_dal.Show();
             if (list != null)
             {
                 HttpResposeMessage1 message = new HttpResposeMessage1()
@@ -67,9 +68,11 @@ namespace ErpWebApi.Controllers
 
         }
         [HttpPut]
+        [Route("Upt")]
         public int Upt(Userinfo u)
         {
             return _dal.Upt(u);
         }
+
     }
 }

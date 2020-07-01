@@ -39,7 +39,7 @@ namespace ErpWebApi
                 options.AddPolicy("getd", policy =>
                 {
                     // 設定允許跨域的來源，有多個的話可以用 `,` 隔開
-                    policy.WithOrigins("https://localhost:44370", "http://localhost:20343")
+                    policy.WithOrigins("http://localhost:44370", "http://localhost:20343")
                             .AllowAnyHeader()
                             .AllowAnyMethod()
                             .AllowCredentials();

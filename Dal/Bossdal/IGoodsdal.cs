@@ -14,7 +14,7 @@ namespace Dal
         List<Goods> Show();
 
 
-        int Del(int id, int num);
+        int Del(int id);
 
 
         int Upt(int id, string Gname, DateTime Gscdate, int Gbz, string Gzxbz, int Gphone, int Gsum);

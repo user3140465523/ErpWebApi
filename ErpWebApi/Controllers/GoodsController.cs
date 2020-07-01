@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Dal;
-using Model;
 using System.Data;
 using ErpWebApi.Model;
+using Dal;
+using Model;
 
 namespace ErpWebApi.Controllers
 {
@@ -29,9 +29,9 @@ namespace ErpWebApi.Controllers
             return _dal.Add(g, name, num);
         }
 
-        public int Del(int id, int num)
+        public int Del(int id)
         {
-            return _dal.Del(id, num);
+            return _dal.Del(id);
         }
         
         public DataTable Retrieve(string name)

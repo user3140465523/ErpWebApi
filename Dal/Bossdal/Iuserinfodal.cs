@@ -1,4 +1,4 @@
-﻿using Model;
+﻿using Model.Boss;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,5 +21,6 @@ namespace Dal.Bossdal
 
 
         DataTable Retrieve(string name);
+       
     }
 }

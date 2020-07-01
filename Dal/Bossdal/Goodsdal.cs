@@ -23,9 +23,9 @@ namespace Dal
             }
         }
 
-        public int Del(int id, int num)
+        public int Del(int id)
         {
-            string dels = $"update Goods set num=num-{num} where Gid={id}";
+            string dels = $"delete Goods  where Gid={id}";
 
             return DBHelper.ExecuteNonQuery(dels);
         }
