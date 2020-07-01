@@ -15,8 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Logindal\" />
-    <Folder Include="Managerdal\" />
-    <Folder Include="selldal\" />
   </ItemGroup>
 
 </Project>

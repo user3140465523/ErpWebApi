@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dal;
 using Dal.Bossdal;
-
+using Dal.Selldal;
+using Dal.Managerdal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,7 +33,8 @@ namespace ErpWebApi
             services.AddSingleton<IGoodsdal,Goodsdal>();
             services.AddSingleton<IUserinfodal,Userinfodal>();
             services.AddSingleton<IProducedal,Producedal>();
-           
+            services.AddSingleton<ISellDal,SellDal>();
+            services.AddSingleton<IManagerD,ManagerDal>();
             services.AddCors(options =>
             {
                 // Policy 名稱 CorsPolicy 是自訂的，可以自己改
