@@ -8,7 +8,7 @@ namespace Dal
 {
     public interface IGoodsdal
     {
-        int Add(Goods g, string name, int num);
+        int Add(Goods g);
 
 
         List<Goods> Show();
@@ -17,7 +17,7 @@ namespace Dal
         int Del(int id);
 
 
-        int Upt(int id, string Gname, DateTime Gscdate, int Gbz, string Gzxbz, int Gphone, int Gsum);
+        int Upt(Goods g);
 
 
         DataTable Retrieve(string name);

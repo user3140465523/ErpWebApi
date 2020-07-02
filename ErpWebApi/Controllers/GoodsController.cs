@@ -24,9 +24,9 @@ namespace ErpWebApi.Controllers
        
 
 
-        public int Add(Goods g, string name, int num)
+        public int Add(Goods g)
         {
-            return _dal.Add(g, name, num);
+            return _dal.Add(g);
         }
 
         public int Del(int id)
@@ -70,9 +70,9 @@ namespace ErpWebApi.Controllers
             }
         }
 
-        public int Upt(int id, string name, DateTime scdate, int bz, string zx, int phone, int sum)
+        public int Upt(Goods g)
         {
-            return _dal.Upt(id, name, scdate, bz, zx, phone, sum);
+            return _dal.Upt(g);
         }
     }
 }

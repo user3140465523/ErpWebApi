@@ -7,17 +7,17 @@ namespace Dal
 {
     public class Goodsdal : IGoodsdal
     {
-        public int Add(Goods g, string name,  int num)
+        public int Add(Goods g)
         {
-            object names = DBHelper.GetDataTable($" select * from Goods like {name}=Gname");
+            object names =$"select * from Goods where Gname ='{g.Gname}'";
             if (Convert.ToString(names) != "")
             {
-                string updates = $"update Goods set num={num}+num ";
+                string updates = $"update Goods set Gnum=Gnum+{g.Gnum} where Gname='{g.Gname}' ";
                 return DBHelper.ExecuteNonQuery(updates);
             }
             else
             {
-                string Adds = $"insert into  Goods Values('{g.Gname}','{g.Gscdata}','{g.Gbz}','{g.Gzxbz}','{g.Gphone}','{g.Gnum}')";
+                string Adds = $"insert into  Goods Values('{g.Gname}','{g.Gscdata}',{g.Gbz},'{g.Gzxbz}','{g.Gphone}',{g.Gnum})";
                 return DBHelper.ExecuteNonQuery(Adds);
                
             }
@@ -25,7 +25,7 @@ namespace Dal
 
         public int Del(int id)
         {
-            string dels = $"delete Goods  where Gid={id}";
+            string dels = $"delete from Goods where Gid={id}";
 
             return DBHelper.ExecuteNonQuery(dels);
         }
@@ -42,9 +42,9 @@ namespace Dal
             return DBHelper.GetList<Goods>(shows);
         }
 
-        public int Upt(int id, string Gname, DateTime Gscdate, int Gbz, string Gzxbz, int Gphone, int Gsum)
+        public int Upt(Goods g)
         {
-            string upts = $"update Goods set Gname={Gname},Gscdate={Gscdate},Gbz={Gbz},Gzxbz={Gzxbz},Gphone={Gphone},Gsum={Gsum} where Gid={id}";
+            string upts = $"update Goods set Gname='{g.Gname}',Gscdate='{g.Gscdata}',Gbz={g.Gbz},Gzxbz='{g.Gzxbz}',Gphone='{g.Gphone}',Gnum={g.Gnum} where Gid={g.Gid}";
             return DBHelper.ExecuteNonQuery(upts);
         }
     }

@@ -12,7 +12,7 @@ namespace Model.Boss
         public string Uphone { get; set; }//用户手机
         public string Uemail { get; set; }//用户邮箱
         public int Uage { get; set; }//用户年龄
-        public int Usex { get; set; }//用户性别
+        public bool Usex { get; set; }//用户性别
         public decimal Salary { get; set; }//用户工资
         public int Rid { get; set; }//外键
     }
