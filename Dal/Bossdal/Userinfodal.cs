@@ -10,7 +10,7 @@ namespace Dal.Bossdal
     {
         public int Add(Userinfo u)
         {
-          string Adds= $"insert into  Userinfo Values('{u.Uname}','{u.Upass}','{u.Uphone}','{u.Uemail}',{u.Uage},{u.Usex},{u.Salary},'{3}')";
+          string Adds= $"insert into  Userinfo Values ('{u.Uname}','{u.Upass}','{u.Uphone}','{u.Uemail}',{u.Uage},'{u.Usex}',{u.Salary},{3})";
             return DBHelper.ExecuteNonQuery(Adds); 
         }
 

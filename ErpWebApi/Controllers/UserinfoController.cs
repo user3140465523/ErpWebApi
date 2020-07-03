@@ -21,7 +21,8 @@ namespace ErpWebApi.Controllers
         {
             _dal = dal;
         }
-        public int Add(Userinfo u)
+        [HttpPost]
+        public int Add([FromForm]Userinfo u)
         {
             return _dal.Add(u);
         }
