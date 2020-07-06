@@ -1,7 +1,9 @@
 ﻿using Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace Dal
 {
@@ -9,8 +11,9 @@ namespace Dal
     {
         public int Add(Goods g)
         {
-            object names =$"select * from Goods where Gname ='{g.Gname}'";
-            if (Convert.ToString(names) != "")
+            int names = (int)DBHelper.GetDataTable($"select count(1) from Goods where Gname='{g.Gname}'").Rows[0][0];
+            
+            if(names!=0)
             {
                 string updates = $"update Goods set Gnum=Gnum+{g.Gnum} where Gname='{g.Gname}' ";
                 return DBHelper.ExecuteNonQuery(updates);
@@ -32,7 +35,7 @@ namespace Dal
 
         public DataTable Retrieve(string name)
         {
-            string rets = $"select * from Goods where like name={name} ";
+            string rets = $"select * from Goods where Gname='{name}'";
             return DBHelper.GetDataTable(rets);
         }
 
