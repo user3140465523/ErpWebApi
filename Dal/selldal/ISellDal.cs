@@ -14,6 +14,7 @@ namespace Dal.Selldal
         List<GoodsModel> ShowGoods();
         int GoodsUpt(int gid, int num);
         int StatisUpt(int stid, int num);
- 
+        int StatisUptStnum();
+
     }
 }

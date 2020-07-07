@@ -12,5 +12,7 @@ namespace Model.Sell
         public decimal AddMoneys { get; set; }
         public string Remark { get; set; }
 
+
+        public string Uname { get; set; }
     }
 }

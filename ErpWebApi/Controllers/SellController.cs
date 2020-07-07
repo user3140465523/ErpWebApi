@@ -74,6 +74,10 @@ namespace ErpWebApi.Controllers
         {
             return dal.StatisUpt(stid, num);
         }
-        
+        //自动清空销量
+        public int StatisUptStnum()
+        {
+            return dal.StatisUptStnum();
+        }
     }
 }

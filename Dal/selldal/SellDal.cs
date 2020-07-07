@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data;
 
 namespace Dal.Selldal
 {
@@ -35,7 +36,10 @@ namespace Dal.Selldal
         //加薪申请
         public int AddMoney(AddMoneyModel model)
         {
-            string sql = $"insert into AddMoney values('{model.RoleName}','{model.AddMoneys}','{model.Remark}',{model.Uid})";
+            string ss = $"select uid from Userinfo where Uname ='{model.Uname}'";
+            DataTable tb = DBHelper.GetDataTable(ss);
+
+            string sql = $"insert into AddMoney values('{model.RoleName}','{model.AddMoneys}','{model.Remark}',{tb.Rows[0][0]})";
             return DBHelper.ExecuteNonQuery(sql);
         }
         //销量报表
@@ -68,6 +72,20 @@ namespace Dal.Selldal
             string sql = "update Statisticss set Stsum=Stsum+" + num + " where Stid=" + stid + "";
             return DBHelper.ExecuteNonQuery(sql);
         }
-         
+        //月底自动清空销量
+        public int StatisUptStnum()
+        {
+            string date1 = (string)DBHelper.GetDataTable("select CONVERT(varchar(10),DATEADD(DAY,-1,DATEADD(MM,DATEDIFF(MM,0,GETDATE())+1,0)), 23)+' 23:00:00'").Rows[0][0];
+            if (DateTime.Now >=DateTime.Parse(date1))
+            {
+                string sql1 = "update Statisticss set Stsum=0 where Stid between 1 and 4";
+                return DBHelper.ExecuteNonQuery(sql1);
+            }
+            else
+            {
+                return 777;
+            }
+        }
+
     }
 }
